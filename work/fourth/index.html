@@ -61,6 +61,16 @@
       // ・連続で何回もホバーした時、手を止めているのにリストがスライドし続けないか
       // ・出てきたリストの上にホバーできるか
       // ※必ずレビュー前に上記挙動が問題ないか確認すること
+
+      function slideDown(){
+          var index = $(this).index();
+          $('.menu__list__childList').eq(index).stop().slideDown(500);
+      }
+      function slideUp(){
+          var index = $(this).index();
+          $('.menu__list__childList').eq(index).stop().slideUp(500);
+      }
+      $('.menu__list').children('li').hover(slideDown,slideUp)
     </script>
   </body>
 </html>
